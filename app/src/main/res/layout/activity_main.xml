@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="?android:attr/colorActivatedHighlight" />
+
+    <!--
+    clipToPadding yerine iç boşluğa sadık kal, iliştir diyorum (true)
+    burada framelayout var ve aslında nesneler padding (iç boşluk) olmasa üst üste duracak
+    sırasıyla;
+    listView için yukarıdan 200dp boşluk bıraktım
+    clipToPadding=true diyerek yukardaki 200dp boşluk var bu boşluğa sadık kalarak scroll işlemlerini gerçekleştir
+    böylece yazılar turuncu resmimin üzerine çıkmadan listelemiş oldum
+    Not:yazılmasa da default olarak clipToPadding=true gelir
+    -->
+    <ListView
+        android:id="@+id/listView"
+        android:paddingTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"/>
+</FrameLayout>
